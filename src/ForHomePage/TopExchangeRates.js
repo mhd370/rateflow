@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Card from "@mui/material/Card";
 import Box from "@mui/material/Box";
@@ -39,7 +39,9 @@ export default function TopExchangeRates() {
   const [lastUpdated, setLastUpdated] = useState(null);
   const [error, setError] = useState("");
 
-  const fetchRates = async () => {
+  const prevRatesRef = useRef(null);
+
+  const fetchRates = useCallback(async () => {
     try {
       setLoading(true);
       setError("");
@@ -65,10 +67,12 @@ export default function TopExchangeRates() {
 
       const newRates = data.data;
 
-      if (rates) {
+      const prevRates = prevRatesRef.current;
+
+      if (prevRates) {
         const newChanges = {};
         QUOTES.forEach((quote) => {
-          const oldRate = getRate(rates, quote);
+          const oldRate = getRate(prevRates, quote);
           const newRate = getRate(newRates, quote);
           if (oldRate && newRate) {
             const pct = ((newRate - oldRate) / oldRate) * 100;
@@ -78,6 +82,7 @@ export default function TopExchangeRates() {
         setChanges(newChanges);
       }
 
+      prevRatesRef.current = newRates;
       setRates(newRates);
       setLastUpdated(new Date());
     } catch (err) {
@@ -86,14 +91,13 @@ export default function TopExchangeRates() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [t]);
 
   useEffect(() => {
     fetchRates();
     const interval = setInterval(fetchRates, 15000);
     return () => clearInterval(interval);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [fetchRates]);
 
   const formatTime = () => {
     if (!lastUpdated) return t("rates.starting");

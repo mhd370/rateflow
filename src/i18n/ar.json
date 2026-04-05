@@ -1,0 +1,509 @@
+{
+  "common": {
+    "live": "مباشر",
+    "updating": "جارٍ التحديث...",
+    "asset": "الأصل",
+    "seeMore": "عرض المزيد",
+    "open": "فتح",
+    "close": "إغلاق",
+    "unknownError": "خطأ غير معروف.",
+    "cancel": "إلغاء",
+    "save": "حفظ",
+    "backToHome": "العودة إلى الرئيسية"
+  },
+  "header": {
+    "subtitle": "أسعار العملات"
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "converter": "المحوّل",
+    "market": "اتجاهات السوق",
+    "aiInsights": "تحليلات AI",
+    "news": "الأخبار",
+    "crypto": "العملات الرقمية",
+    "gold": "الذهب",
+    "account": "الحساب"
+  },
+  "auth": {
+    "login": "تسجيل الدخول",
+    "register": "إنشاء حساب",
+    "logout": "تسجيل الخروج",
+    "signedIn": "تم تسجيل الدخول",
+    "userFallback": "مستخدم",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "name": "الاسم",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "creatingAccount": "جارٍ إنشاء الحساب...",
+    "loggingIn": "جارٍ تسجيل الدخول...",
+    "logoutAction": "تسجيل الخروج",
+    "accountTitle": "الحساب",
+    "accountSubtitle": "تفاصيل حسابك بعد تسجيل الدخول.",
+    "createdAt": "تاريخ الإنشاء",
+    "userId": "معرّف المستخدم",
+    "notAuthenticated": "أنت غير مسجّل الدخول.",
+    "loginFailed": "فشل تسجيل الدخول.",
+    "loginSubtitle": "سجّل الدخول للمتابعة. يتم حفظ رمز الجلسة محليًا لأغراض العرض.",
+    "newHere": "جديد هنا؟",
+    "createAccount": "إنشاء حساب",
+    "registrationFailed": "فشل إنشاء الحساب.",
+    "createAccountHeading": "إنشاء حساب",
+    "registerSubtitle": "سجّل باستخدام الاسم والبريد الإلكتروني وكلمة المرور (٨ أحرف على الأقل).",
+    "alreadyHaveAccount": "لديك حساب بالفعل؟",
+    "checkingSession": "جارٍ التحقق من الجلسة…",
+    "networkError": "خطأ شبكة. هل الخادم يعمل؟",
+    "missingToken": "رمز المصادقة مفقود."
+  },
+  "footer": {
+    "description": "مراقبة ذكية للعملات للمتداولين والشركات والمسافرين. تابع الأسعار والاتجاهات وإشارات السوق في لوحة واحدة.",
+    "liveFeedChip": "تغذية مباشرة: HTTP 429 (تجريبي)",
+    "timeChip": "UTC • 24/7",
+    "navigationTitle": "التنقل",
+    "links": {
+      "converter": "محول العملات",
+      "newsInsights": "الأخبار والتحليلات"
+    },
+    "dataTitle": "البيانات والتواصل",
+    "dataDisclaimer": "بيانات FX مجمعة من عدة مزودين. الأسعار للمعلومات فقط وقد تختلف عن أسعار التنفيذ الفعلية.",
+    "providerChip": "CurrencyAPI (تجريبي)",
+    "delayedChip": "أسعار متأخرة",
+    "copyright": "© {{year}} Rate Flow. جميع الحقوق محفوظة.",
+    "privacy": "سياسة الخصوصية",
+    "terms": "شروط الاستخدام",
+    "support": "الدعم"
+  },
+  "home": {
+    "heroTitle": "RateFlow — ذكاء مالي مباشر",
+    "heroSubtitle": "حوّل العملات، راقب العملات الرقمية والمعادن، وتابع زخم السوق — في لوحة واحدة سريعة لاتخاذ قرار.",
+    "heroChips": {
+      "realtimeRates": "أسعار لحظية",
+      "cryptoMetals": "عملات رقمية ومعادن",
+      "marketInsights": "رؤى السوق"
+    },
+    "heroActions": {
+      "startConverting": "ابدأ التحويل",
+      "viewMarkets": "عرض الأسواق"
+    },
+    "metrics": {
+      "trackedAssets": { "label": "أصول متابَعة", "hint": "عملات · كريبتو · معادن" },
+      "updateSpeed": { "label": "سرعة التحديث", "hint": "قريب من اللحظي" },
+      "insights": { "label": "الرؤى", "value": "اتجاهات", "hint": "زخم وتحركات" },
+      "experience": { "label": "التجربة", "value": "احترافية", "hint": "واجهة سريعة ونظيفة" }
+    },
+    "sections": {
+      "converter": {
+        "title": "محول شامل ذكي",
+        "subtitle": "عملات · كريبتو · ذهب · فضة",
+        "chip": "جاهز للبث",
+        "savePair": "حفظ الزوج",
+        "createAlert": "إنشاء تنبيه"
+      },
+      "topRates": { "title": "أفضل أسعار الصرف", "subtitle": "الأكثر متابعة" },
+      "metals": { "title": "لمحة المعادن", "subtitle": "ذهب وفضة اليوم" },
+      "crypto": { "title": "أبرز العملات الرقمية", "subtitle": "أفضل العملات والتحركات" },
+      "trends": { "title": "اتجاهات سوق مباشرة", "subtitle": "تتبع الزخم عبر السوق", "chip": "نبض" },
+      "news": { "title": "آخر الأخبار", "subtitle": "تحديثات مختارة لتبقى متقدمًا.", "viewAll": "عرض الكل" }
+    }
+  },
+  "converter": {
+    "title": "المحوّل",
+    "pageTitle": "محول شامل ذكي",
+    "pageSubtitle": "حوّل بين العملات والكريبتو والمعادن الثمينة في واجهة بسيطة ونظيفة.",
+    "quickConvertTitle": "تحويل سريع",
+    "quickConvertSubtitle": "عملات · كريبتو · ذهب · فضة",
+    "types": {
+      "fiat": "عملات",
+      "crypto": "كريبتو",
+      "metals": "معادن"
+    },
+    "from": "من",
+    "to": "إلى",
+    "amount": "المبلغ",
+    "convert": "تحويل",
+    "swap": "تبديل",
+    "updating": "جارٍ تحديث الأسعار...",
+    "ready": "جاهز. اختر العملات وأدخل المبلغ.",
+    "loadingError": "فشل تحميل الأسعار.",
+    "selectCurrencies": "يرجى اختيار العملات وإدخال المبلغ.",
+    "ratesNotReady": "الأسعار غير جاهزة بعد. حاول مرة أخرى.",
+    "rateUnavailable": "سعر العملة المختارة غير متاح.",
+    "invalidNumber": "يرجى إدخال رقم صالح.",
+      "resultLabel": "النتيجة",
+      "enterAmount": "أدخل مبلغًا للتحويل.",
+      "demoNote": "تم تطبيق سعر تجريبي. استبدله بواجهة API حقيقية للعملات/الكريبتو/المعادن.",
+      "liveNote": "أسعار مباشرة: {{sources}} • آخر تحديث {{time}}",
+      "liveStale": "فشل التحديث المباشر — يتم استخدام آخر أسعار محفوظة ({{time}}).",
+      "copy": "نسخ"
+    },
+  "rates": {
+    "title": "أفضل أسعار الصرف",
+    "httpError": "خطأ HTTP:",
+    "apiError": "خطأ في واجهة API.",
+    "loadError": "فشل تحميل الأسعار.",
+    "starting": "جارٍ البدء...",
+    "live": "مباشر",
+    "na": "غير متاح",
+    "stable": "مستقر",
+    "updating": "جارٍ التحديث...",
+    "update": "تحديث",
+    "notAvailable": "غير متاح"
+  },
+  "news": {
+    "title": "الأخبار ورؤى السوق",
+    "subtitle": "تحديثات مختارة عبر الفوركس والكريبتو والاقتصاد الكلي لمساعدتك على اتخاذ قرارات أفضل.",
+    "readFullStory": "قراءة الخبر",
+    "loadMore": "تحميل المزيد",
+    "categories": {
+      "All": "الكل",
+      "Forex": "فوركس",
+      "Crypto": "كريبتو",
+      "Macro": "اقتصاد كلي"
+    }
+  },
+  "marketTrends": {
+    "title": "اتجاهات سوق مباشرة",
+    "subtitle": "تتبع التحركات عبر العملات والكريبتو والسلع لتبقى متقدمًا وتقرر بذكاء.",
+    "chartTitle": "اتجاهات السوق",
+    "chip": "FX • معادن • مؤشر",
+    "indexedNote": "مفهرس مقابل USD (100 = البداية)",
+    "focusCurrency": "عملة التركيز",
+    "timeframe": "الإطار",
+    "timeframes": {
+      "1D": "آخر 24 ساعة",
+      "1W": "آخر 7 أيام",
+      "1M": "آخر 30 يومًا",
+      "1Y": "آخر 12 شهرًا"
+    }
+  },
+  "crypto": {
+    "title": "سوق العملات الرقمية",
+    "live": "مباشر",
+    "description": "استكشف الأسعار الحية وأقوى التحركات وإشارات السوق لأهم الأصول الرقمية.",
+    "topCoins": "أهم العملات",
+    "marketTrend": "اتجاه السوق",
+    "signals": "إشارات",
+    "open": "فتح صفحة العملات",
+    "features": {
+      "prices": "أسعار حية وتغيّر %",
+      "movers": "أعلى رابحين/خاسرين",
+      "converter": "أدوات تحويل سريعة",
+      "favorites": "واجهة مناسبة لقائمة متابعة"
+    }
+  },
+  "cryptoPage": {
+    "heroTitle": "الأصول الرقمية — أسعار مباشرة",
+    "heroSubtitle": "محطة كريبتو احترافية: تابع أكبر العملات حسب القيمة السوقية، راقب التحركات اليومية، ورتّب السوق بسرعة.",
+    "heroChips": {
+      "topMarketCap": "أعلى قيمة سوقية",
+      "movers24h": "تحركات 24 ساعة",
+      "sortSearch": "فرز وبحث"
+    },
+    "refresh": "تحديث",
+    "tryAgain": "حاول مرة أخرى",
+    "open": "فتح",
+    "metrics": {
+      "totalMarketCap": "إجمالي القيمة السوقية",
+      "topCoinsHint": "أعلى {{count}} عملة",
+      "topGainer": "أعلى رابح (24h)",
+      "topGainerHint": "أكبر تغير % خلال 24 ساعة",
+      "topLoser": "أعلى خاسر (24h)",
+      "topLoserHint": "أقل تغير % خلال 24 ساعة",
+      "btcDominance": "هيمنة BTC",
+      "btcDominanceHint": "ضمن هذه القائمة"
+    },
+    "table": {
+      "title": "جدول السوق",
+      "subtitle": "انقر على العملة لفتح التفاصيل · فرز الأعمدة · بحث سريع",
+      "searchPlaceholder": "ابحث عن عملة… (BTC، Ethereum، SOL)",
+      "updatedAt": "آخر تحديث: {{time}}",
+      "updatedEmpty": "آخر تحديث: —",
+      "columns": {
+        "coin": "العملة",
+        "price": "السعر",
+        "marketCap": "القيمة السوقية",
+        "action": "إجراء"
+      }
+    },
+    "dataSource": "المصدر: CoinGecko API العامة (تجريبي). قد تتأخر الأسعار.",
+    "errors": {
+      "unexpectedResponse": "استجابة API غير متوقعة",
+      "timeout": "انتهت المهلة. حاول مرة أخرى.",
+      "rateLimit": "طلبات كثيرة (تقييد CoinGecko). انتظر 30–60 ثانية ثم حدّث.",
+      "blocked": "تم حظر الطلب (403). جرّب شبكة أخرى أو أضف Proxy في الخادم.",
+      "generic": "فشل تحميل أسعار العملات الرقمية. حاول مرة أخرى."
+    }
+  },
+  "metals": {
+    "title": "الذهب والفضة",
+    "chip": "سعر فوري (تجريبي)",
+    "desc": "تابع المعادن الثمينة في عرض مالي واضح وأنيق.",
+    "goldLabel": "ذهب",
+    "silverLabel": "فضة",
+    "perOunce": "للأونصة",
+    "cta": "فتح صفحة المعادن"
+  },
+  "gold": {
+    "title": "لوحة أسعار الذهب والفضة",
+    "subtitle": "أسعار مرجعية مباشرة للذهب (XAU) والفضة (XAG) مقابل عملتك المختارة مع أداء يومي ونظرة اتجاهية.",
+    "fxLoading": "جارٍ تحميل أسعار العملات…",
+    "fxError": "فشل تحميل أسعار العملات. سيتم عرض USD فقط.",
+    "metals": {
+      "gold": "ذهب",
+      "silver": "فضة"
+    },
+    "chartHeaderTitle": "{{metal}} ({{code}}) – السعر الفوري",
+    "chartHeaderSubtitle": "اتجاه سعر الأونصة بعملة {{currency}}.",
+    "currentPriceLabel": "سعر {{metal}} الحالي (للأونصة)",
+    "referenceOnly": "للمرجع فقط — قد يختلف عن سعر التنفيذ.",
+    "cards": {
+      "gold": {
+        "description": "سعر مرجعي للأونصة بالدولار. استخدم المحدد في المخطط لعرض الذهب بعملة الأساس التي تفضّلها.",
+        "bullets": {
+          "instrument": "• الأداة: XAU/USD (فوري)",
+          "unit": "• الوحدة: أونصة تروي نقية واحدة",
+          "role": "• الدور: أصل تحوط، حماية من التضخم، مخزن قيمة طويل الأجل."
+        }
+      },
+      "silver": {
+        "description": "سعر الفضة الفوري بالدولار للأونصة. غالبًا أكثر تقلبًا من الذهب ويتأثر بالطلب الصناعي.",
+        "bullets": {
+          "instrument": "• الأداة: XAG/USD (فوري)",
+          "uses": "• يستخدم في الصناعة والطاقة الشمسية والإلكترونيات والمجوهرات.",
+          "volatility": "• عادةً أكثر تقلبًا وتكتيكًا من الذهب."
+        }
+      }
+    },
+    "disclaimer": "الأسعار المعروضة تقديرية ولأغراض معلوماتية فقط ولا تمثل أسعار شراء/بيع ملزمة من Rate Flow أو أي مزود سيولة."
+  },
+  "aiInsights": {
+    "heroTitle": "ذكاء السوق بالذكاء الاصطناعي",
+    "heroSubtitle": "رسوم بيانية مباشرة، إشارات شفافة، ومساعد سوق واعٍ بالسياق — للوضوح لا للقطع.",
+    "errors": {
+      "timeoutFetch": "انتهت مهلة الطلب أثناء تحميل بيانات CoinGecko. حاول بعد قليل."
+    },
+    "status": {
+      "loadingData": "جارٍ تحميل البيانات...",
+      "updating": "جارٍ التحديث...",
+      "noDataCached": "لا توجد بيانات | تم استخدام الكاش",
+      "rateLimitedCached": "تم تقييد الطلب (كاش)",
+      "rateLimited": "تم تقييد الطلب",
+      "timeoutCached": "انتهت المهلة (كاش)",
+      "timeout": "انتهت المهلة",
+      "blockedCached": "تم الحظر (كاش)",
+      "blocked": "تم الحظر",
+      "noData": "لا توجد بيانات",
+      "liveFailedCached": "فشل التحديث الحي | كاش",
+      "dataUnavailable": "البيانات غير متاحة",
+      "coingeckoDerived": "CoinGecko | مشتق",
+      "coingeckoOhlc": "CoinGecko | OHLC"
+    },
+    "chart": {
+      "title": "مخطط التداول",
+      "provider": "Lightweight Charts",
+      "assetLabel": "الأصل",
+      "selectAsset": "اختر الأصل",
+      "loadingChart": "جارٍ تحميل المخطط...",
+      "failedToLoad": "فشل تحميل المخطط.",
+      "loadingMarketData": "جارٍ تحميل بيانات السوق...",
+      "errors": {
+        "noDataTitle": "لم يتم إرجاع بيانات لهذا الأصل/الإطار.",
+        "rateLimitTitle": "تم تقييد الطلب من CoinGecko.",
+        "timeoutTitle": "انتهت مهلة الطلب.",
+        "blockedTitle": "تم حظر الطلب.",
+        "genericTitle": "تعذّر تحميل بيانات المخطط."
+      }
+    },
+    "stats": {
+      "instrument": "الأداة",
+      "pair": "الزوج",
+      "price": "السعر",
+      "lastClose": "آخر إغلاق",
+      "change": "التغيّر",
+      "periodPerformance": "أداء الفترة",
+      "high": "الأعلى",
+      "visibleHigh": "أعلى سعر ظاهر",
+      "low": "الأدنى",
+      "visibleLow": "أدنى سعر ظاهر",
+      "updatedPlaceholder": "آخر تحديث --",
+      "updatedAt": "آخر تحديث {{time}}",
+      "timeframeLabel": "TF: {{label}}",
+      "timeframeShort": "TF"
+    },
+    "analysis": {
+      "title": "تحليل سوق ذكي",
+      "subtitle": "قراءة اتجاهية مبنية على قواعد من سلوك السوق الأخير (ليست توقعًا).",
+      "direction": {
+        "bullish": "صاعد",
+        "bearish": "هابط",
+        "neutral": "محايد"
+      },
+      "risk": {
+        "low": "منخفض",
+        "medium": "متوسط",
+        "high": "مرتفع"
+      },
+      "sourceDerived": "CoinGecko • مشتق",
+      "sourceOhlc": "CoinGecko • OHLC",
+      "errorTitle": "تحليل السوق غير متاح.",
+      "metrics": {
+        "direction": "الاتجاه",
+        "directionalRead": "قراءة اتجاهية",
+        "confidence": "الثقة",
+        "confidenceHint": "الثقة الأعلى تعني أن الإشارات الأخيرة أكثر اتساقًا.",
+        "riskLevel": "مستوى المخاطر"
+      },
+      "signals": {
+        "last": "آخر: {{value}}",
+        "trend": "الاتجاه: {{value}}",
+        "momentum": "الزخم: {{value}}",
+        "range": "النطاق: {{value}}%",
+        "maxDd": "أقصى هبوط: {{value}}%",
+        "support": "دعم: {{value}}",
+        "resistance": "مقاومة: {{value}}"
+      },
+      "notEnoughData": "لا توجد نقاط بيانات كافية لحساب قراءة اتجاهية مستقرة بعد.",
+      "explanationLabel": "الشرح",
+      "explanationText": "قراءة مبنية على قواعد من حركة السعر خلال ~{{days}} يوم: انحياز {{direction}} بثقة {{confidence}}%. الاتجاه: {{trend}}؛ الزخم: {{momentum}}؛ تذبذب النطاق: {{range}}%. هذا تحليل اتجاهي وليس توقعًا.",
+      "scenarioTitle": "ملخص السيناريو",
+      "scenarios": {
+        "waitMore": "انتظر المزيد من البيانات لبناء قراءة قصيرة المدى أكثر موثوقية.",
+        "base": "أساسي",
+        "bull": "صاعد",
+        "bear": "هابط",
+        "label": "سيناريو {{label}}",
+        "baseNeutral": "الحالة الأساسية: تذبذب ضمن نطاق الدعم والمقاومة مع زخم مختلط.",
+        "baseBullish": "الحالة الأساسية: انحياز صاعد مع احتمالية تصحيحات وإعادة اختبار للمستويات.",
+        "baseBearish": "الحالة الأساسية: انحياز هابط مع احتمالية ارتدادات/ضغط شراء قرب الدعم.",
+        "bullText": "حالة الصعود: اختراق مستدام فوق المقاومة قد يشير لاستمرار الحركة. (قراءة اتجاهية وليست توقعًا مضمونًا.)",
+        "bearText": "حالة الهبوط: كسر مستدام تحت الدعم قد يفتح مجالًا لهبوط إضافي. (قراءة اتجاهية وليست توقعًا مضمونًا.)"
+      },
+      "educationalNote": "ملاحظة تعليمية: هذه قراءة حتمية مبنية على قواعد لسلوك السوق الأخير وليست نصيحة مالية."
+    },
+    "targets": {
+      "title": "تحليل الأهداف",
+      "modeOn": "الوضع: تشغيل",
+      "modeOff": "الوضع: إيقاف",
+      "clickToPlace1": "انقر على المخطط لتحديد الهدف 1",
+      "clickToPlace2": "انقر على المخطط لتحديد الهدف 2",
+      "setTarget1": "تحديد T1",
+      "setTarget2": "تحديد T2",
+      "target1Placeholder": "الهدف 1",
+      "target2Placeholder": "الهدف 2",
+      "target1Short": "T1",
+      "target2Short": "T2",
+      "analyze": "تحليل الأهداف",
+      "reset": "إعادة ضبط",
+      "modalTitle": "وضع تحليل الأهداف",
+      "chartTitle": "مخطط التراكبات الفنية",
+      "errors": {
+        "title": "تعذر تشغيل تحليل الأهداف"
+      },
+      "signal": {
+        "buy": "شراء",
+        "sell": "بيع",
+        "noTrade": "بدون صفقة"
+      },
+      "summary": {
+        "signal": "الإشارة",
+        "deterministic": "محرك تحليل فني حتمي",
+        "confidence": "الثقة",
+        "modelFree": "بدون تخمين من LLM",
+        "risk": "المخاطر",
+        "target1Prob": "احتمال وصول الهدف 1",
+        "target2Prob": "احتمال وصول الهدف 2",
+        "target1": "T1: {{price}}",
+        "target2": "T2: {{price}}",
+        "title": "ملخص حتمي"
+      },
+      "suggestions": {
+        "title": "بدائل مقترحة",
+        "near": "قريب: {{price}}",
+        "far": "بعيد: {{price}}",
+        "note": "هذه بدائل مبنية على قواعد عندما يكون الهدف بعيدًا مقارنةً بالتذبذب/ATR الأخير."
+      },
+      "patterns": {
+        "title": "هياكل مكتشفة",
+        "conf": "ثقة {{value}}"
+      },
+      "aiTitle": "شرح AI",
+      "aiUsesDeterministic": "يعتمد على النتيجة الحتمية",
+      "aiExplainPrompt": "اشرح نتيجة تحليل الأهداف. استخدم الاحتمالات والمستويات والأنماط المكتشفة. قدّم سيناريوهات وملاحظات مخاطر. تجنب النصيحة المالية.",
+      "aiLoading": "جارٍ إنشاء الشرح...",
+      "aiUnavailable": "شرح AI غير متاح",
+      "aiPlaceholder": "اطلب من المساعد في لوحة الدردشة مزيدًا من السياق."
+    },
+    "chat": {
+      "title": "مساعد السوق بالذكاء الاصطناعي",
+      "subtitle": "إجابات واعية بالسياق مرتبطة بهذا الأصل والإطار.",
+      "contextPrefix": "السياق",
+      "timeframe": "TF: {{label}}",
+      "aiChip": "AI: {{mode}}",
+      "modes": { "endpoint": "Endpoint", "devKey": "Dev Key", "key": "Key", "offline": "Offline" },
+      "offlineTitle": "AI غير متصل (إعدادات ناقصة)",
+      "offlineBody": "اضبط `REACT_APP_AI_CHAT_ENDPOINT` (موصى به) ثم أعد تشغيل السيرفر/البناء. مفاتيح المتصفح معطّلة افتراضيًا في الإنتاج.",
+      "suggestedTitle": "أسئلة مقترحة",
+      "typing": "يكتب…",
+      "inputPlaceholder": "اسأل سؤالًا عن السوق…",
+      "inputAria": "رسالة الدردشة",
+      "sendAria": "إرسال",
+      "educationalNote": "ملاحظة تعليمية: الردود تحليل سياقي وليست نتائج مضمونة أو نصيحة مالية.",
+      "welcome": "اسأل سؤالًا عن السوق وسأجيب باستخدام سياق هذه الصفحة (الاتجاه، الإحصاءات، وإشارات المخاطر). هذا تحليل تعليمي — وليس نصيحة مالية.",
+      "thisAsset": "هذا الأصل",
+      "selectedTimeframe": "الإطار المحدد",
+      "suggestions": {
+        "biasLabel": "ملخص الاتجاه",
+        "biasMessage": "لخّص الاتجاه الحالي لـ {{pair}} خلال {{tf}}.",
+        "levelsLabel": "المستويات المهمة",
+        "levelsMessage": "ما هي مستويات الدعم والمقاومة الرئيسية لـ {{pair}}؟",
+        "riskLabel": "المخاطر والتذبذب",
+        "riskMessage": "اشرح المخاطر/التذبذب الحالي لـ {{pair}} خلال {{tf}} بلغة بسيطة.",
+        "scenariosLabel": "السيناريوهات",
+        "scenariosMessage": "اعطني سيناريوهات أساسية/صعودية/هبوطية لـ {{pair}} خلال {{tf}}."
+      },
+      "fallback": {
+        "contextMissing": "السياق: --",
+        "snapshotLine": "لقطة مبنية على قواعد: {{direction}}",
+        "confidenceLine": "الثقة {{value}}%",
+        "riskLine": "المخاطر {{value}}",
+        "signalsLine": "الإشارات: اتجاه {{trend}} • زخم {{momentum}} • نطاق {{range}} • MaxDD {{maxDd}}",
+        "levelsLine": "المستويات: دعم {{support}} • مقاومة {{resistance}}",
+        "priceLine": "السعر: {{price}} ({{change}})",
+        "offlineLine": "المساعد: غير متصل (AI غير مهيأ).",
+        "unavailableLine": "المساعد: غير متاح مؤقتًا.",
+        "enableLine": "لتفعيل AI: اضبط `REACT_APP_AI_CHAT_ENDPOINT` ثم أعد تشغيل التطبيق.",
+        "snapshotEmpty": "لقطة مبنية على قواعد: --",
+        "errorLine": "الخطأ: {{message}}",
+        "tryAgainLine": "حاول لاحقًا — المخطط الحي والتحليل الحتمي ما زالا متاحين."
+      }
+    },
+    "point": {
+      "title": "تحليل نقطة زمنية",
+      "subtitle": "انقر على شمعة لفحص حالة السوق في تلك اللحظة.",
+      "timeframeFallback": "الإطار الزمني",
+      "emptyTitle": "لم يتم اختيار نقطة بعد.",
+      "emptyBody": "انقر على شمعة في المخطط لرؤية تفصيل مركز (الاتجاه، الزخم، التذبذب، والمستويات القريبة).",
+      "selectedTimestamp": "الوقت المحدد",
+      "localTrendUp": "الاتجاه المحلي: صاعد",
+      "localTrendDown": "الاتجاه المحلي: هابط",
+      "localTrendFlat": "الاتجاه المحلي: ثابت",
+      "metrics": {
+        "ohlc": "OHLC",
+        "ohlcHint": "أعلى {{high}} · أدنى {{low}}",
+        "momentum": "الزخم",
+        "momentumHint": "نظرة قصيرة على الشمعة المحددة",
+        "volatility": "التذبذب",
+        "volatilityHint": "الانحراف المعياري للعوائد المحلية",
+        "trendBefore": "الاتجاه (قبل)",
+        "trendAfter": "الاتجاه (بعد)",
+        "windowBars": "نافذة: {{count}} شمعة",
+        "notEnoughFuture": "لا توجد شموع مستقبلية كافية",
+        "riskEstimate": "تقدير المخاطر",
+        "localRange": "النطاق المحلي: {{value}}%",
+        "localRangeEmpty": "النطاق المحلي: --",
+        "supportLocal": "دعم (محلي)",
+        "resistanceLocal": "مقاومة (محلية)",
+        "distance": "المسافة: {{value}}"
+      }
+    }
+  }
+}

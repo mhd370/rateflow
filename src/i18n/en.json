@@ -1,0 +1,509 @@
+{
+  "common": {
+    "live": "Live",
+    "updating": "Updating...",
+    "asset": "Asset",
+    "seeMore": "See more",
+    "open": "Open",
+    "close": "Close",
+    "unknownError": "Unknown error.",
+    "cancel": "Cancel",
+    "save": "Save",
+    "backToHome": "Back to Home"
+  },
+  "header": {
+    "subtitle": "Currency Rates"
+  },
+  "nav": {
+    "home": "Home",
+    "converter": "Converter",
+    "market": "Market Trends",
+    "aiInsights": "AI Insights",
+    "news": "News",
+    "crypto": "Crypto",
+    "gold": "Gold",
+    "account": "Account"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "signedIn": "Signed in",
+    "userFallback": "User",
+    "email": "Email",
+    "password": "Password",
+    "name": "Name",
+    "confirmPassword": "Confirm password",
+    "creatingAccount": "Creating account...",
+    "loggingIn": "Logging in...",
+    "logoutAction": "Logout",
+    "accountTitle": "Account",
+    "accountSubtitle": "Your signed-in profile details.",
+    "createdAt": "Created",
+    "userId": "User ID",
+    "notAuthenticated": "You are not authenticated.",
+    "loginFailed": "Login failed.",
+    "loginSubtitle": "Sign in to continue. This stores a session token locally for demo purposes.",
+    "newHere": "New here?",
+    "createAccount": "Create an account",
+    "registrationFailed": "Registration failed.",
+    "createAccountHeading": "Create account",
+    "registerSubtitle": "Register with your name, email, and a password (min 8 characters).",
+    "alreadyHaveAccount": "Already have an account?",
+    "checkingSession": "Checking session…",
+    "networkError": "Network error. Is the backend running?",
+    "missingToken": "Missing auth token."
+  },
+  "footer": {
+    "description": "Smart currency monitoring for traders, businesses, and travelers. Track live rates, trends, and market signals in one dashboard.",
+    "liveFeedChip": "Live feed: HTTP 429 (demo)",
+    "timeChip": "UTC • 24/7",
+    "navigationTitle": "Navigation",
+    "links": {
+      "converter": "Currency Converter",
+      "newsInsights": "News & Insights"
+    },
+    "dataTitle": "Data & Contacts",
+    "dataDisclaimer": "FX data aggregated from multiple providers. Rates are for informational purposes only and may differ from actual execution prices.",
+    "providerChip": "CurrencyAPI (demo)",
+    "delayedChip": "Delayed quotes",
+    "copyright": "© {{year}} Rate Flow. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "support": "Support"
+  },
+  "home": {
+    "heroTitle": "RateFlow — Live Money Intelligence",
+    "heroSubtitle": "Convert currencies, monitor crypto & metals, and track market momentum — all in one premium dashboard built for fast decisions.",
+    "heroChips": {
+      "realtimeRates": "Real-time rates",
+      "cryptoMetals": "Crypto & metals",
+      "marketInsights": "Market insights"
+    },
+    "heroActions": {
+      "startConverting": "Start Converting",
+      "viewMarkets": "View Markets"
+    },
+    "metrics": {
+      "trackedAssets": { "label": "Tracked Assets", "hint": "FX · Crypto · Metals" },
+      "updateSpeed": { "label": "Update Speed", "hint": "Near real-time" },
+      "insights": { "label": "Insights", "value": "Trends", "hint": "Momentum & moves" },
+      "experience": { "label": "Experience", "value": "Premium", "hint": "Fast & clean UI" }
+    },
+    "sections": {
+      "converter": {
+        "title": "Smart Universal Converter",
+        "subtitle": "Fiat · Crypto · Gold · Silver",
+        "chip": "Live-ready",
+        "savePair": "Save Pair",
+        "createAlert": "Create Alert"
+      },
+      "topRates": { "title": "Top Exchange Rates", "subtitle": "Most watched pairs" },
+      "metals": { "title": "Metals Snapshot", "subtitle": "Gold & Silver today" },
+      "crypto": { "title": "Crypto Highlights", "subtitle": "Top coins & moves" },
+      "trends": { "title": "Live Market Trends", "subtitle": "Track momentum across the market", "chip": "Pulse" },
+      "news": { "title": "Latest News", "subtitle": "Curated updates to keep you ahead.", "viewAll": "View all" }
+    }
+  },
+  "converter": {
+    "title": "Converter",
+    "pageTitle": "Smart Universal Converter",
+    "pageSubtitle": "Convert between fiat currencies, crypto, and precious metals in one clean and simple interface.",
+    "quickConvertTitle": "Quick Convert",
+    "quickConvertSubtitle": "Fiat · Crypto · Gold · Silver",
+    "types": {
+      "fiat": "Fiat",
+      "crypto": "Crypto",
+      "metals": "Metals"
+    },
+    "from": "From",
+    "to": "To",
+    "amount": "Amount",
+    "convert": "Convert",
+    "swap": "Swap",
+    "updating": "Updating rates...",
+    "ready": "Ready. Select currencies and enter an amount.",
+    "loadingError": "Failed to load rates.",
+    "selectCurrencies": "Please select currencies and enter an amount.",
+    "ratesNotReady": "Rates are not ready yet. Please try again.",
+    "rateUnavailable": "Rate for the selected currency is unavailable.",
+    "invalidNumber": "Please enter a valid number.",
+    "resultLabel": "Result",
+    "enterAmount": "Enter an amount to convert.",
+    "demoNote": "Demo rate applied. Replace with live FX/crypto/metals API.",
+    "liveNote": "Live rates: {{sources}} \u2022 Updated {{time}}",
+    "liveStale": "Live update failed \u2014 using cached rates ({{time}}).",
+    "copy": "Copy"
+  },
+  "rates": {
+    "title": "Top Exchange Rates",
+    "httpError": "HTTP error:",
+    "apiError": "API error.",
+    "loadError": "Failed to load rates.",
+    "starting": "Starting...",
+    "live": "Live",
+    "na": "N/A",
+    "stable": "Stable",
+    "updating": "Updating...",
+    "update": "Update",
+    "notAvailable": "Not available"
+  },
+  "news": {
+    "title": "News & Market Insights",
+    "subtitle": "Curated updates across forex, crypto, and macroeconomics to help you move money smarter.",
+    "readFullStory": "Read full story",
+    "loadMore": "Load more news",
+    "categories": {
+      "All": "All",
+      "Forex": "Forex",
+      "Crypto": "Crypto",
+      "Macro": "Macro"
+    }
+  },
+  "marketTrends": {
+    "title": "Live Market Trends",
+    "subtitle": "Track real-time movements across currencies, crypto, and commodities to stay ahead of market changes and make smarter decisions.",
+    "chartTitle": "Market Trends",
+    "chip": "FX • Metals • Index",
+    "indexedNote": "Indexed vs USD (100 = start)",
+    "focusCurrency": "Focus currency",
+    "timeframe": "Timeframe",
+    "timeframes": {
+      "1D": "Last 24 hours",
+      "1W": "Last 7 days",
+      "1M": "Last 30 days",
+      "1Y": "Last 12 months"
+    }
+  },
+  "crypto": {
+    "title": "Crypto Market",
+    "live": "Live",
+    "description": "Explore real-time prices, movers, and market signals across leading crypto assets.",
+    "topCoins": "Top coins",
+    "marketTrend": "Market trend",
+    "signals": "Signals",
+    "open": "Open Crypto",
+    "features": {
+      "prices": "Live prices & % change",
+      "movers": "Top gainers/losers",
+      "converter": "Quick conversion tools",
+      "favorites": "Watchlist-friendly layout"
+    }
+  },
+  "cryptoPage": {
+    "heroTitle": "Digital Assets — Live Prices",
+    "heroSubtitle": "A premium crypto terminal: track top coins by market cap, spot daily movers, and sort the market in seconds.",
+    "heroChips": {
+      "topMarketCap": "Top market cap",
+      "movers24h": "24h movers",
+      "sortSearch": "Sort & search"
+    },
+    "refresh": "Refresh",
+    "tryAgain": "Try again",
+    "open": "Open",
+    "metrics": {
+      "totalMarketCap": "Total Market Cap",
+      "topCoinsHint": "Top {{count}} coins",
+      "topGainer": "Top Gainer (24h)",
+      "topGainerHint": "Highest 24h % change",
+      "topLoser": "Top Loser (24h)",
+      "topLoserHint": "Lowest 24h % change",
+      "btcDominance": "BTC Dominance",
+      "btcDominanceHint": "Within this list"
+    },
+    "table": {
+      "title": "Market Table",
+      "subtitle": "Click a coin to open details · Sort columns · Search instantly",
+      "searchPlaceholder": "Search coin… (BTC, Ethereum, SOL)",
+      "updatedAt": "Updated: {{time}}",
+      "updatedEmpty": "Updated: —",
+      "columns": {
+        "coin": "Coin",
+        "price": "Price",
+        "marketCap": "Market Cap",
+        "action": "Action"
+      }
+    },
+    "dataSource": "Data source: CoinGecko public API (demo). Prices may be delayed.",
+    "errors": {
+      "unexpectedResponse": "Unexpected API response",
+      "timeout": "Request timed out. Please try again.",
+      "rateLimit": "Too many requests (CoinGecko rate limit). Wait 30–60 seconds and refresh.",
+      "blocked": "Request blocked (403). Try a different network or add a backend proxy.",
+      "generic": "Error loading crypto prices. Please try again."
+    }
+  },
+  "metals": {
+    "title": "Gold & Silver",
+    "chip": "Spot (demo)",
+    "desc": "Track precious metals in a clean, finance-style overview.",
+    "goldLabel": "Gold",
+    "silverLabel": "Silver",
+    "perOunce": "per ounce",
+    "cta": "Open metals view"
+  },
+  "gold": {
+    "title": "Gold & Silver Spot Dashboard",
+    "subtitle": "Live reference prices for gold (XAU) and silver (XAG), compared against your selected currency, with daily performance and trend overview.",
+    "fxLoading": "Loading FX rates…",
+    "fxError": "Error loading FX rates. Showing USD only.",
+    "metals": {
+      "gold": "Gold",
+      "silver": "Silver"
+    },
+    "chartHeaderTitle": "{{metal}} ({{code}}) – Spot Price",
+    "chartHeaderSubtitle": "Ounce price trend in {{currency}}.",
+    "currentPriceLabel": "Current {{metal}} price (per ounce)",
+    "referenceOnly": "Reference only – may differ from execution price.",
+    "cards": {
+      "gold": {
+        "description": "Benchmark ounce price in USD. Use the selector in the main chart to view gold in your preferred base currency.",
+        "bullets": {
+          "instrument": "• Instrument: XAU/USD (spot)",
+          "unit": "• Unit: 1 fine troy ounce",
+          "role": "• Role: hedge asset, inflation protection, long-term store of value."
+        }
+      },
+      "silver": {
+        "description": "Silver spot price in USD per ounce. Often trades with higher volatility than gold and is heavily driven by industrial demand.",
+        "bullets": {
+          "instrument": "• Instrument: XAG/USD (spot)",
+          "uses": "• Used in industry, solar, electronics, jewelry.",
+          "volatility": "• Typically more volatile and tactical than gold."
+        }
+      }
+    },
+    "disclaimer": "Prices shown are indicative and for informational purposes only. They do not represent a firm bid/ask from Rate Flow or any liquidity provider."
+  },
+  "aiInsights": {
+    "heroTitle": "AI Market Intelligence",
+    "heroSubtitle": "Live charting, transparent signals, and a context-aware market assistant - designed for clarity, not certainty.",
+    "errors": {
+      "timeoutFetch": "Request timed out while loading CoinGecko data. Try again shortly."
+    },
+    "status": {
+      "loadingData": "Loading data...",
+      "updating": "Updating...",
+      "noDataCached": "No data returned | Cached",
+      "rateLimitedCached": "Rate limited (cached)",
+      "rateLimited": "Rate limited",
+      "timeoutCached": "Timed out (cached)",
+      "timeout": "Timed out",
+      "blockedCached": "Blocked (cached)",
+      "blocked": "Blocked",
+      "noData": "No data returned",
+      "liveFailedCached": "Live update failed | Cached",
+      "dataUnavailable": "Data unavailable",
+      "coingeckoDerived": "CoinGecko | Derived",
+      "coingeckoOhlc": "CoinGecko | OHLC"
+    },
+    "chart": {
+      "title": "Trading Chart",
+      "provider": "Lightweight Charts",
+      "assetLabel": "Asset",
+      "selectAsset": "Select asset",
+      "loadingChart": "Loading chart...",
+      "failedToLoad": "Chart failed to load.",
+      "loadingMarketData": "Loading market data...",
+      "errors": {
+        "noDataTitle": "No data returned for this asset/timeframe.",
+        "rateLimitTitle": "Rate limited by CoinGecko.",
+        "timeoutTitle": "Request timed out.",
+        "blockedTitle": "Request blocked.",
+        "genericTitle": "Unable to load chart data."
+      }
+    },
+    "stats": {
+      "instrument": "Instrument",
+      "pair": "Pair",
+      "price": "Price",
+      "lastClose": "Last close",
+      "change": "Change",
+      "periodPerformance": "Period performance",
+      "high": "High",
+      "visibleHigh": "Visible high",
+      "low": "Low",
+      "visibleLow": "Visible low",
+      "updatedPlaceholder": "Updated --",
+      "updatedAt": "Updated {{time}}",
+      "timeframeLabel": "TF: {{label}}",
+      "timeframeShort": "TF"
+    },
+    "analysis": {
+      "title": "Smart Market Analysis",
+      "subtitle": "Rule-based directional read from recent market behavior (not a prediction).",
+      "direction": {
+        "bullish": "Bullish",
+        "bearish": "Bearish",
+        "neutral": "Neutral"
+      },
+      "risk": {
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High"
+      },
+      "sourceDerived": "CoinGecko • Derived",
+      "sourceOhlc": "CoinGecko • OHLC",
+      "errorTitle": "Market analysis unavailable.",
+      "metrics": {
+        "direction": "Direction",
+        "directionalRead": "Directional read",
+        "confidence": "Confidence",
+        "confidenceHint": "Higher confidence means the recent signals are more consistent.",
+        "riskLevel": "Risk Level"
+      },
+      "signals": {
+        "last": "Last: {{value}}",
+        "trend": "Trend: {{value}}",
+        "momentum": "Momentum: {{value}}",
+        "range": "Range: {{value}}%",
+        "maxDd": "Max DD: {{value}}%",
+        "support": "Support: {{value}}",
+        "resistance": "Resistance: {{value}}"
+      },
+      "notEnoughData": "Not enough market data points to compute a stable directional reading yet.",
+      "explanationLabel": "Explanation",
+      "explanationText": "Rule-based read from recent price action over ~{{days}} day(s): {{direction}} bias with {{confidence}}% confidence. Trend: {{trend}}; momentum: {{momentum}}; range volatility: {{range}}%. This is directional analysis, not a prediction.",
+      "scenarioTitle": "Scenario Summary",
+      "scenarios": {
+        "waitMore": "Wait for more data to build a reliable short-term read.",
+        "base": "Base",
+        "bull": "Bull",
+        "bear": "Bear",
+        "label": "{{label}} scenario",
+        "baseNeutral": "Base case: consolidation continues between recent support and resistance while momentum stays mixed.",
+        "baseBullish": "Base case: bullish bias persists, but expect pullbacks as price retests recent levels.",
+        "baseBearish": "Base case: bearish bias persists, but short squeezes/pullbacks can occur near support.",
+        "bullText": "Bull case: a sustained break above the recent swing high (resistance) could signal continuation. (Directional read, not a guaranteed forecast.)",
+        "bearText": "Bear case: a sustained break below the recent swing low (support) could open further downside. (Directional read, not a guaranteed forecast.)"
+      },
+      "educationalNote": "Educational note: this is a deterministic, rule-based read of recent market behavior, not financial advice."
+    },
+    "targets": {
+      "title": "Target Analysis",
+      "modeOn": "Mode: ON",
+      "modeOff": "Mode: OFF",
+      "clickToPlace1": "Click chart to place Target 1",
+      "clickToPlace2": "Click chart to place Target 2",
+      "setTarget1": "Set T1",
+      "setTarget2": "Set T2",
+      "target1Placeholder": "Target 1",
+      "target2Placeholder": "Target 2",
+      "target1Short": "T1",
+      "target2Short": "T2",
+      "analyze": "Analyze Targets",
+      "reset": "Reset",
+      "modalTitle": "Target Analysis Mode",
+      "chartTitle": "Technical Overlay Chart",
+      "errors": {
+        "title": "Unable to run target analysis"
+      },
+      "signal": {
+        "buy": "Buy",
+        "sell": "Sell",
+        "noTrade": "No Trade"
+      },
+      "summary": {
+        "signal": "Signal",
+        "deterministic": "Deterministic TA engine",
+        "confidence": "Confidence",
+        "modelFree": "No LLM guessing",
+        "risk": "Risk",
+        "target1Prob": "Target 1 reach probability",
+        "target2Prob": "Target 2 reach probability",
+        "target1": "T1: {{price}}",
+        "target2": "T2: {{price}}",
+        "title": "Deterministic Summary"
+      },
+      "suggestions": {
+        "title": "Suggested Alternatives",
+        "near": "Near: {{price}}",
+        "far": "Far: {{price}}",
+        "note": "These are rule-based alternatives when a target is far relative to recent ATR/volatility."
+      },
+      "patterns": {
+        "title": "Detected Structures",
+        "conf": "Confidence {{value}}"
+      },
+      "aiTitle": "AI Explanation",
+      "aiUsesDeterministic": "Uses deterministic result",
+      "aiExplainPrompt": "Explain this target analysis result. Use the provided probabilities, levels, and detected patterns. Give scenarios and risk notes. Do not give financial advice.",
+      "aiLoading": "Generating explanation...",
+      "aiUnavailable": "AI explanation unavailable",
+      "aiPlaceholder": "Ask the assistant in the chat panel for more context."
+    },
+    "chat": {
+      "title": "AI Market Assistant",
+      "subtitle": "Context-aware answers tied to this instrument and timeframe.",
+      "contextPrefix": "Context",
+      "timeframe": "TF: {{label}}",
+      "aiChip": "AI: {{mode}}",
+      "modes": { "endpoint": "Endpoint", "devKey": "Dev Key", "key": "Key", "offline": "Offline" },
+      "offlineTitle": "AI is offline (missing configuration)",
+      "offlineBody": "Set `REACT_APP_AI_CHAT_ENDPOINT` (recommended) and restart the dev server/build. Browser API keys are intentionally disabled by default in production.",
+      "suggestedTitle": "Suggested Questions",
+      "typing": "Typing…",
+      "inputPlaceholder": "Ask a market question…",
+      "inputAria": "Chat message",
+      "sendAria": "Send",
+      "educationalNote": "Educational note: responses are contextual analysis, not guaranteed outcomes or financial advice.",
+      "welcome": "Ask a market question and I’ll answer using the live context on this page (trend, stats, and risk signals). This is educational analysis — not financial advice.",
+      "thisAsset": "this asset",
+      "selectedTimeframe": "the selected timeframe",
+      "suggestions": {
+        "biasLabel": "Bias & Summary",
+        "biasMessage": "Summarize the current bias on {{pair}} over {{tf}}.",
+        "levelsLabel": "Key Levels",
+        "levelsMessage": "What are the key support and resistance levels for {{pair}}?",
+        "riskLabel": "Risk & Volatility",
+        "riskMessage": "Explain the current risk/volatility for {{pair}} over {{tf}} in plain language.",
+        "scenariosLabel": "Scenarios",
+        "scenariosMessage": "Give base/bull/bear scenarios for {{pair}} over {{tf}}."
+      },
+      "fallback": {
+        "contextMissing": "Context: --",
+        "snapshotLine": "Rule-based snapshot: {{direction}}",
+        "confidenceLine": "Confidence {{value}}%",
+        "riskLine": "Risk {{value}}",
+        "signalsLine": "Signals: Trend {{trend}} • Momentum {{momentum}} • Range {{range}} • MaxDD {{maxDd}}",
+        "levelsLine": "Levels: Support {{support}} • Resistance {{resistance}}",
+        "priceLine": "Price: {{price}} ({{change}})",
+        "offlineLine": "Assistant: Offline (AI not configured).",
+        "unavailableLine": "Assistant: Temporarily unavailable.",
+        "enableLine": "To enable AI: set `REACT_APP_AI_CHAT_ENDPOINT` and restart the app.",
+        "snapshotEmpty": "Rule-based snapshot: --",
+        "errorLine": "Error: {{message}}",
+        "tryAgainLine": "Try again in a moment — the live chart and deterministic analysis are still available."
+      }
+    },
+    "point": {
+      "title": "Point-in-time Analysis",
+      "subtitle": "Click a candle to inspect the exact market state at that moment.",
+      "timeframeFallback": "Timeframe",
+      "emptyTitle": "No point selected yet.",
+      "emptyBody": "Click a candlestick on the chart to see a focused breakdown (trend, momentum, volatility, and nearby levels).",
+      "selectedTimestamp": "Selected timestamp",
+      "localTrendUp": "Local trend: Up",
+      "localTrendDown": "Local trend: Down",
+      "localTrendFlat": "Local trend: Flat",
+      "metrics": {
+        "ohlc": "OHLC",
+        "ohlcHint": "High {{high}} · Low {{low}}",
+        "momentum": "Momentum",
+        "momentumHint": "Short lookback into the selected bar",
+        "volatility": "Volatility",
+        "volatilityHint": "Std dev of local returns",
+        "trendBefore": "Trend (before)",
+        "trendAfter": "Trend (after)",
+        "windowBars": "Window: {{count}} bars",
+        "notEnoughFuture": "Not enough future bars",
+        "riskEstimate": "Risk estimate",
+        "localRange": "Local range: {{value}}%",
+        "localRangeEmpty": "Local range: --",
+        "supportLocal": "Support (local)",
+        "resistanceLocal": "Resistance (local)",
+        "distance": "Distance: {{value}}"
+      }
+    }
+  }
+}

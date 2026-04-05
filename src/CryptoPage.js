@@ -28,6 +28,7 @@ import RefreshIcon from "@mui/icons-material/Refresh";
 import NorthEastIcon from "@mui/icons-material/NorthEast";
 import SouthEastIcon from "@mui/icons-material/SouthEast";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import { useTranslation } from "react-i18next";
 
 const PER_PAGE = 25;
 
@@ -167,6 +168,9 @@ function MetricCard({ label, value, hint, accent = "blue" }) {
 }
 
 export default function CryptoPage() {
+  const { t, i18n } = useTranslation();
+  const isAr = i18n.language === "ar";
+
   const [coins, setCoins] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -176,7 +180,7 @@ export default function CryptoPage() {
   const [sortDir, setSortDir] = useState("desc");
   const [lastUpdated, setLastUpdated] = useState(null);
 
-  const fetchCrypto = async () => {
+  const fetchCrypto = React.useCallback(async () => {
     try {
       setLoading(true);
       setError("");
@@ -193,7 +197,7 @@ export default function CryptoPage() {
 
       const data = await res.json();
       if (!Array.isArray(data)) {
-        throw new Error("Unexpected API response");
+        throw new Error(t("cryptoPage.errors.unexpectedResponse", "Unexpected API response"));
       }
 
       setCoins(data);
@@ -203,23 +207,28 @@ export default function CryptoPage() {
 
       const msg =
         err?.name === "AbortError"
-          ? "Request timed out. Please try again."
+          ? t("cryptoPage.errors.timeout", "Request timed out. Please try again.")
           : String(err?.message || "").includes("429")
-            ? "Too many requests (CoinGecko rate limit). Wait 30–60 seconds and refresh."
+            ? t(
+                "cryptoPage.errors.rateLimit",
+                "Too many requests (CoinGecko rate limit). Wait 30–60 seconds and refresh.",
+              )
             : String(err?.message || "").includes("403")
-              ? "Request blocked (403). Try a different network or add a backend proxy."
-              : "Error loading crypto prices. Please try again.";
+              ? t(
+                  "cryptoPage.errors.blocked",
+                  "Request blocked (403). Try a different network or add a backend proxy.",
+                )
+              : t("cryptoPage.errors.generic", "Error loading crypto prices. Please try again.");
 
       setError(msg);
     } finally {
       setLoading(false);
     }
-  };
+  }, [t]);
 
   useEffect(() => {
     fetchCrypto();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [fetchCrypto]);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -305,6 +314,7 @@ export default function CryptoPage() {
           "radial-gradient(1200px 650px at 18% 12%, rgba(77,196,255,0.20) 0%, rgba(0,0,0,0) 60%), radial-gradient(900px 520px at 82% 20%, rgba(123,92,255,0.16) 0%, rgba(0,0,0,0) 55%), linear-gradient(180deg, rgba(6,16,38,0.45) 0%, rgba(8,18,38,0.92) 55%, rgba(6,12,28,0.98) 100%)",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
+        direction: isAr ? "rtl" : "ltr",
       }}
     >
       <Box
@@ -339,7 +349,7 @@ export default function CryptoPage() {
               alignItems={{ xs: "center", md: "flex-end" }}
               justifyContent="space-between"
             >
-              <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
+              <Box sx={{ textAlign: { xs: "center", md: isAr ? "right" : "left" } }}>
                 <Typography
                   sx={{
                     fontWeight: 1000,
@@ -348,7 +358,7 @@ export default function CryptoPage() {
                     lineHeight: 1.08,
                   }}
                 >
-                  Digital Assets — Live Prices
+                  {t("cryptoPage.heroTitle", "Digital Assets — Live Prices")}
                 </Typography>
                 <Typography
                   sx={{
@@ -360,8 +370,10 @@ export default function CryptoPage() {
                     lineHeight: 1.75,
                   }}
                 >
-                  A premium crypto terminal: track top coins by market cap, spot
-                  daily movers, and sort the market in seconds.
+                  {t(
+                    "cryptoPage.heroSubtitle",
+                    "A premium crypto terminal: track top coins by market cap, spot daily movers, and sort the market in seconds.",
+                  )}
                 </Typography>
 
                 <Stack
@@ -375,7 +387,7 @@ export default function CryptoPage() {
                   }}
                 >
                   <Chip
-                    label="Top market cap"
+                    label={t("cryptoPage.heroChips.topMarketCap", "Top market cap")}
                     sx={{
                       color: "rgba(255,255,255,0.92)",
                       bgcolor: "rgba(58,198,255,0.14)",
@@ -384,7 +396,7 @@ export default function CryptoPage() {
                     }}
                   />
                   <Chip
-                    label="24h movers"
+                    label={t("cryptoPage.heroChips.movers24h", "24h movers")}
                     sx={{
                       color: "rgba(255,255,255,0.92)",
                       bgcolor: "rgba(76,175,80,0.12)",
@@ -393,7 +405,7 @@ export default function CryptoPage() {
                     }}
                   />
                   <Chip
-                    label="Sort & search"
+                    label={t("cryptoPage.heroChips.sortSearch", "Sort & search")}
                     sx={{
                       color: "rgba(255,255,255,0.92)",
                       bgcolor: "rgba(123,92,255,0.12)",
@@ -420,7 +432,7 @@ export default function CryptoPage() {
                     "0 14px 34px rgba(0,0,0,0.55), 0 0 18px rgba(77,196,255,0.35)",
                 }}
               >
-                Refresh
+                {t("cryptoPage.refresh", "Refresh")}
               </Button>
             </Stack>
 
@@ -433,26 +445,29 @@ export default function CryptoPage() {
               }}
             >
               <MetricCard
-                label="Total Market Cap"
+                label={t("cryptoPage.metrics.totalMarketCap", "Total Market Cap")}
                 value={metrics.totalCap}
-                hint={`Top ${PER_PAGE} coins`}
+                hint={t("cryptoPage.metrics.topCoinsHint", {
+                  defaultValue: "Top {{count}} coins",
+                  count: PER_PAGE,
+                })}
               />
               <MetricCard
-                label="Top Gainer (24h)"
+                label={t("cryptoPage.metrics.topGainer", "Top Gainer (24h)")}
                 value={metrics.topGainer}
-                hint="Highest 24h % change"
+                hint={t("cryptoPage.metrics.topGainerHint", "Highest 24h % change")}
                 accent="green"
               />
               <MetricCard
-                label="Top Loser (24h)"
+                label={t("cryptoPage.metrics.topLoser", "Top Loser (24h)")}
                 value={metrics.topLoser}
-                hint="Lowest 24h % change"
+                hint={t("cryptoPage.metrics.topLoserHint", "Lowest 24h % change")}
                 accent="red"
               />
               <MetricCard
-                label="BTC Dominance"
+                label={t("cryptoPage.metrics.btcDominance", "BTC Dominance")}
                 value={metrics.btcDom}
-                hint="Within this list"
+                hint={t("cryptoPage.metrics.btcDominanceHint", "Within this list")}
                 accent="purple"
               />
             </Box>
@@ -489,7 +504,7 @@ export default function CryptoPage() {
               <Typography
                 sx={{ fontWeight: 1000, fontSize: 16, color: "#fff" }}
               >
-                Market Table
+                {t("cryptoPage.table.title", "Market Table")}
               </Typography>
               <Typography
                 sx={{
@@ -498,7 +513,10 @@ export default function CryptoPage() {
                   mt: 0.3,
                 }}
               >
-                Click a coin to open details · Sort columns · Search instantly
+                {t(
+                  "cryptoPage.table.subtitle",
+                  "Click a coin to open details · Sort columns · Search instantly",
+                )}
               </Typography>
             </Box>
 
@@ -511,7 +529,10 @@ export default function CryptoPage() {
                 size="small"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search coin… (BTC, Ethereum, SOL)"
+                placeholder={t(
+                  "cryptoPage.table.searchPlaceholder",
+                  "Search coin… (BTC, Ethereum, SOL)",
+                )}
                 sx={{
                   minWidth: { xs: "100%", sm: 360 },
                   "& .MuiInputBase-root": {
@@ -535,8 +556,11 @@ export default function CryptoPage() {
               <Chip
                 label={
                   lastUpdated
-                    ? `Updated: ${lastUpdated.toLocaleTimeString()}`
-                    : "Updated: —"
+                    ? t("cryptoPage.table.updatedAt", {
+                        defaultValue: "Updated: {{time}}",
+                        time: lastUpdated.toLocaleTimeString(),
+                      })
+                    : t("cryptoPage.table.updatedEmpty", "Updated: —")
                 }
                 sx={{
                   color: "rgba(255,255,255,0.85)",
@@ -570,7 +594,7 @@ export default function CryptoPage() {
                     "&:hover": { backgroundColor: "rgba(58,198,255,0.08)" },
                   }}
                 >
-                  Try again
+                  {t("cryptoPage.tryAgain", "Try again")}
                 </Button>
               </Box>
             )}
@@ -599,7 +623,7 @@ export default function CryptoPage() {
                           backgroundColor: "rgba(6,10,22,0.92)",
                         }}
                       >
-                        Coin
+                        {t("cryptoPage.table.columns.coin", "Coin")}
                       </TableCell>
 
                       <TableCell
@@ -619,7 +643,7 @@ export default function CryptoPage() {
                           onClick={() => onSort("current_price")}
                           sx={{ color: "rgba(255,255,255,0.85)" }}
                         >
-                          Price
+                          {t("cryptoPage.table.columns.price", "Price")}
                         </TableSortLabel>
                       </TableCell>
 
@@ -663,7 +687,7 @@ export default function CryptoPage() {
                           onClick={() => onSort("market_cap")}
                           sx={{ color: "rgba(255,255,255,0.85)" }}
                         >
-                          Market Cap
+                          {t("cryptoPage.table.columns.marketCap", "Market Cap")}
                         </TableSortLabel>
                       </TableCell>
 
@@ -676,7 +700,7 @@ export default function CryptoPage() {
                           backgroundColor: "rgba(6,10,22,0.92)",
                         }}
                       >
-                        Action
+                        {t("cryptoPage.table.columns.action", "Action")}
                       </TableCell>
                     </TableRow>
                   </TableHead>
@@ -924,7 +948,7 @@ export default function CryptoPage() {
                                   },
                                 }}
                               >
-                                Open
+                                {t("cryptoPage.open", "Open")}
                               </Button>
                             </TableCell>
                           </TableRow>
@@ -945,7 +969,10 @@ export default function CryptoPage() {
                 color: "rgba(255,255,255,0.75)",
               }}
             >
-              Data source: CoinGecko public API (demo). Prices may be delayed.
+              {t(
+                "cryptoPage.dataSource",
+                "Data source: CoinGecko public API (demo). Prices may be delayed.",
+              )}
             </Typography>
           </Box>
         </Card>

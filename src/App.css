@@ -4,35 +4,7 @@
   /* شلنا text-align: center لأنه بيخرب توزيع الهيدر والمحتوى */
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-size: 16px;
-  background-color: #132145;
-
-  /* خلفية اللابتوب */
-  background-image: url("./img/freepik__expand__80486.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-
-  min-height: 100vh;
-}
-
-
-/* For mobile */
-@media (max-width: 768px) {
-  body {
-    background-image: none;
-    background: radial-gradient(
-      circle at top,
-      #1f2e4b 0%,
-      #132145 50%,
-      #0a1326 100%
-    );
-  }
-}
+/* Page background + typography colors are handled by the global MUI theme (src/theme.js). */
 
 html,
 body,
@@ -43,6 +15,7 @@ body,
   max-width: 100%;
   min-height: 100%;
 }
+
 .MuiGrid-container {
   flex-wrap: wrap !important;
 }

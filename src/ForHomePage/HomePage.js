@@ -8,12 +8,13 @@ import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
+import { useTranslation } from "react-i18next";
 
 // your components
 import ConverterCont from "./ConverterCont";
 import TopExchangeRates from "./TopExchangeRates";
 import GoldSilverCard from "./GoldSilverCard";
-import MarketTrends from "../MarketTrendsChart";
+import MarketTrendsChart from "../MarketTrendsChart";
 import CryptoHomeCard from "./CryptoHomeCard";
 import NewsCard from "./NewsCard";
 import NewsCardTow from "./NewsCardTow";
@@ -115,6 +116,9 @@ function Metric({ label, value, hint }) {
 }
 
 export default function HomePage() {
+  const { t, i18n } = useTranslation();
+  const isAr = i18n.language === "ar";
+
   return (
     <Box
       sx={{
@@ -124,6 +128,7 @@ export default function HomePage() {
           "radial-gradient(1200px 650px at 18% 12%, rgba(77,196,255,0.18) 0%, rgba(0,0,0,0) 60%), radial-gradient(900px 520px at 82% 22%, rgba(123,92,255,0.16) 0%, rgba(0,0,0,0) 55%), linear-gradient(180deg, rgba(6,16,38,0.45) 0%, rgba(8,18,38,0.90) 55%, rgba(6,12,28,0.98) 100%)",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
+        direction: isAr ? "rtl" : "ltr",
       }}
     >
       {/* ✅ Wrapper 80% بالمنتصف */}
@@ -166,7 +171,11 @@ export default function HomePage() {
               alignItems={{ xs: "center", md: "flex-end" }}
               justifyContent="space-between"
             >
-              <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
+              <Box
+                sx={{
+                  textAlign: { xs: "center", md: isAr ? "right" : "left" },
+                }}
+              >
                 <Typography
                   sx={{
                     fontWeight: 1000,
@@ -176,7 +185,7 @@ export default function HomePage() {
                     color: "#fff",
                   }}
                 >
-                  RateFlow — Live Money Intelligence
+                  {t("home.heroTitle", "RateFlow — Live Money Intelligence")}
                 </Typography>
 
                 <Typography
@@ -189,9 +198,10 @@ export default function HomePage() {
                     lineHeight: 1.75,
                   }}
                 >
-                  Convert currencies, monitor crypto & metals, and track market
-                  momentum — all in one premium dashboard built for fast
-                  decisions.
+                  {t(
+                    "home.heroSubtitle",
+                    "Convert currencies, monitor crypto & metals, and track market momentum — all in one premium dashboard built for fast decisions.",
+                  )}
                 </Typography>
 
                 <Stack
@@ -205,7 +215,7 @@ export default function HomePage() {
                   }}
                 >
                   <Chip
-                    label="Real-time rates"
+                    label={t("home.heroChips.realtimeRates", "Real-time rates")}
                     sx={{
                       color: "rgba(255,255,255,0.92)",
                       bgcolor: "rgba(58,198,255,0.14)",
@@ -214,7 +224,7 @@ export default function HomePage() {
                     }}
                   />
                   <Chip
-                    label="Crypto & metals"
+                    label={t("home.heroChips.cryptoMetals", "Crypto & metals")}
                     sx={{
                       color: "rgba(255,255,255,0.92)",
                       bgcolor: "rgba(123,92,255,0.14)",
@@ -223,7 +233,7 @@ export default function HomePage() {
                     }}
                   />
                   <Chip
-                    label="Market insights"
+                    label={t("home.heroChips.marketInsights", "Market insights")}
                     sx={{
                       color: "rgba(255,255,255,0.92)",
                       bgcolor: "rgba(255,255,255,0.08)",
@@ -249,7 +259,7 @@ export default function HomePage() {
                       "0 14px 34px rgba(0,0,0,0.55), 0 0 18px rgba(77,196,255,0.35)",
                   }}
                 >
-                  Start Converting
+                  {t("home.heroActions.startConverting", "Start Converting")}
                 </Button>
 
                 <Button
@@ -270,7 +280,7 @@ export default function HomePage() {
                     },
                   }}
                 >
-                  View Markets
+                  {t("home.heroActions.viewMarkets", "View Markets")}
                 </Button>
               </Stack>
             </Stack>
@@ -284,16 +294,24 @@ export default function HomePage() {
               }}
             >
               <Metric
-                label="Tracked Assets"
+                label={t("home.metrics.trackedAssets.label", "Tracked Assets")}
                 value="150+"
-                hint="FX · Crypto · Metals"
+                hint={t("home.metrics.trackedAssets.hint", "FX · Crypto · Metals")}
               />
-              <Metric label="Update Speed" value="Live" hint="Near real-time" />
-              <Metric label="Insights" value="Trends" hint="Momentum & moves" />
               <Metric
-                label="Experience"
-                value="Premium"
-                hint="Fast & clean UI"
+                label={t("home.metrics.updateSpeed.label", "Update Speed")}
+                value={t("common.live", "Live")}
+                hint={t("home.metrics.updateSpeed.hint", "Near real-time")}
+              />
+              <Metric
+                label={t("home.metrics.insights.label", "Insights")}
+                value={t("home.metrics.insights.value", "Trends")}
+                hint={t("home.metrics.insights.hint", "Momentum & moves")}
+              />
+              <Metric
+                label={t("home.metrics.experience.label", "Experience")}
+                value={t("home.metrics.experience.value", "Premium")}
+                hint={t("home.metrics.experience.hint", "Fast & clean UI")}
               />
             </Box>
           </Box>
@@ -317,11 +335,11 @@ export default function HomePage() {
             }}
           >
             <GlassCard
-              title="Smart Universal Converter"
-              subtitle="Fiat · Crypto · Gold · Silver"
+              title={t("home.sections.converter.title", "Smart Universal Converter")}
+              subtitle={t("home.sections.converter.subtitle", "Fiat · Crypto · Gold · Silver")}
               action={
                 <Chip
-                  label="Live-ready"
+                  label={t("home.sections.converter.chip", "Live-ready")}
                   size="small"
                   sx={{
                     color: "rgba(255,255,255,0.9)",
@@ -364,7 +382,7 @@ export default function HomePage() {
                     },
                   }}
                 >
-                  Save Pair
+                  {t("home.sections.converter.savePair", "Save Pair")}
                 </Button>
 
                 <Button
@@ -379,7 +397,7 @@ export default function HomePage() {
                     boxShadow: "0 12px 26px rgba(0,0,0,0.45)",
                   }}
                 >
-                  Create Alert
+                  {t("home.sections.converter.createAlert", "Create Alert")}
                 </Button>
               </Box>
             </GlassCard>
@@ -398,16 +416,16 @@ export default function HomePage() {
               }}
             >
               <GlassCard
-                title="Top Exchange Rates"
-                subtitle="Most watched pairs"
+                title={t("home.sections.topRates.title", "Top Exchange Rates")}
+                subtitle={t("home.sections.topRates.subtitle", "Most watched pairs")}
               >
                 <TopExchangeRates />
               </GlassCard>
 
               {/* ✅ أهم شي: منع القص + ضمان ارتفاع منطقي */}
               <GlassCard
-                title="Metals Snapshot"
-                subtitle="Gold & Silver today"
+                title={t("home.sections.metals.title", "Metals Snapshot")}
+                subtitle={t("home.sections.metals.subtitle", "Gold & Silver today")}
                 contentSx={{
                   overflow: "visible",
                   height: "auto",
@@ -426,16 +444,19 @@ export default function HomePage() {
               </GlassCard>
             </Box>
 
-            <GlassCard title="Crypto Highlights" subtitle="Top coins & moves">
+            <GlassCard
+              title={t("home.sections.crypto.title", "Crypto Highlights")}
+              subtitle={t("home.sections.crypto.subtitle", "Top coins & moves")}
+            >
               <CryptoHomeCard />
             </GlassCard>
 
             <GlassCard
-              title="Live Market Trends"
-              subtitle="Track momentum across the market"
+              title={t("home.sections.trends.title", "Live Market Trends")}
+              subtitle={t("home.sections.trends.subtitle", "Track momentum across the market")}
               action={
                 <Chip
-                  label="Pulse"
+                  label={t("home.sections.trends.chip", "Pulse")}
                   size="small"
                   sx={{
                     color: "rgba(255,255,255,0.92)",
@@ -446,7 +467,7 @@ export default function HomePage() {
                 />
               }
             >
-              <MarketTrends />
+              <MarketTrendsChart />
             </GlassCard>
 
             <Box
@@ -461,7 +482,7 @@ export default function HomePage() {
                 <Typography
                   sx={{ color: "#fff", fontWeight: 1000, fontSize: 18 }}
                 >
-                  Latest News
+                  {t("home.sections.news.title", "Latest News")}
                 </Typography>
                 <Typography
                   sx={{
@@ -470,7 +491,7 @@ export default function HomePage() {
                     mt: 0.3,
                   }}
                 >
-                  Curated updates to keep you ahead.
+                  {t("home.sections.news.subtitle", "Curated updates to keep you ahead.")}
                 </Typography>
               </Box>
 
@@ -482,7 +503,7 @@ export default function HomePage() {
                   "&:hover": { backgroundColor: "rgba(58,198,255,0.08)" },
                 }}
               >
-                View all
+                {t("home.sections.news.viewAll", "View all")}
               </Button>
             </Box>
 

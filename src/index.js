@@ -4,11 +4,29 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./i18n";
+import { ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import { createAppTheme } from "./theme";
+import { useTranslation } from "react-i18next";
+
+function ThemedApp() {
+  const { i18n } = useTranslation();
+  const direction = i18n.language === "ar" ? "rtl" : "ltr";
+
+  const theme = React.useMemo(() => createAppTheme(direction), [direction]);
+
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <App />
+    </ThemeProvider>
+  );
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemedApp />
   </React.StrictMode>,
 );
 

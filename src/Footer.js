@@ -14,8 +14,12 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import LanguageIcon from "@mui/icons-material/Language";
 
 import { Link as RouterLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+  const { t, i18n } = useTranslation();
+  const isAr = i18n.language === "ar";
+
   return (
     <Box
       component="footer"
@@ -29,11 +33,12 @@ export default function Footer() {
         boxShadow: "0 -18px 45px rgba(0,0,0,0.65)",
         color: "rgba(255,255,255,0.85)",
         backdropFilter: "blur(14px)",
+        direction: isAr ? "rtl" : "ltr",
       }}
     >
       <Container maxWidth="lg">
         <Grid container spacing={4} alignItems="flex-start">
-          <Grid item xs={12} md={4}>
+          <Grid size={{ xs: 12, md: 4 }}>
             <Stack direction="row" spacing={1.5} alignItems="center" mb={1.5}>
               <Box
                 sx={{
@@ -57,14 +62,16 @@ export default function Footer() {
             </Stack>
 
             <Typography sx={{ fontSize: 13.5, opacity: 0.85 }}>
-              Smart currency monitoring for traders, businesses, and travelers.
-              Track live rates, trends, and market signals in one dashboard.
+              {t(
+                "footer.description",
+                "Smart currency monitoring for traders, businesses, and travelers. Track live rates, trends, and market signals in one dashboard.",
+              )}
             </Typography>
 
             <Stack direction="row" spacing={1} mt={2}>
               <Chip
                 size="small"
-                label="Live feed: HTTP 429 (demo)"
+                label={t("footer.liveFeedChip", "Live feed: HTTP 429 (demo)")}
                 sx={{
                   fontSize: 11,
                   height: 22,
@@ -74,7 +81,7 @@ export default function Footer() {
               />
               <Chip
                 size="small"
-                label="UTC • 24/7"
+                label={t("footer.timeChip", "UTC • 24/7")}
                 sx={{
                   fontSize: 11,
                   height: 22,
@@ -85,7 +92,7 @@ export default function Footer() {
             </Stack>
           </Grid>
 
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <Typography
               sx={{
                 fontWeight: 600,
@@ -96,7 +103,7 @@ export default function Footer() {
                 opacity: 0.9,
               }}
             >
-              Navigation
+              {t("footer.navigationTitle", "Navigation")}
             </Typography>
             <Stack spacing={0.5}>
               <Link
@@ -110,7 +117,7 @@ export default function Footer() {
                   "&:hover": { color: "#3ac6ff" },
                 }}
               >
-                Home
+                {t("nav.home", "Home")}
               </Link>
               <Link
                 component={RouterLink}
@@ -123,7 +130,7 @@ export default function Footer() {
                   "&:hover": { color: "#3ac6ff" },
                 }}
               >
-                Currency Converter
+                {t("footer.links.converter", "Currency Converter")}
               </Link>
               <Link
                 component={RouterLink}
@@ -136,7 +143,7 @@ export default function Footer() {
                   "&:hover": { color: "#3ac6ff" },
                 }}
               >
-                Market Trends
+                {t("nav.market", "Market Trends")}
               </Link>
               <Link
                 component={RouterLink}
@@ -149,12 +156,12 @@ export default function Footer() {
                   "&:hover": { color: "#3ac6ff" },
                 }}
               >
-                News & Insights
+                {t("footer.links.newsInsights", "News & Insights")}
               </Link>
             </Stack>
           </Grid>
 
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <Typography
               sx={{
                 fontWeight: 600,
@@ -165,19 +172,20 @@ export default function Footer() {
                 opacity: 0.9,
               }}
             >
-              Data & Contacts
+              {t("footer.dataTitle", "Data & Contacts")}
             </Typography>
 
             <Typography sx={{ fontSize: 12.5, opacity: 0.85, mb: 1 }}>
-              FX data aggregated from multiple providers. Rates are for
-              informational purposes only and may differ from actual execution
-              prices.
+              {t(
+                "footer.dataDisclaimer",
+                "FX data aggregated from multiple providers. Rates are for informational purposes only and may differ from actual execution prices.",
+              )}
             </Typography>
 
             <Stack direction="row" spacing={1} mt={1} mb={1.5}>
               <Chip
                 size="small"
-                label="CurrencyAPI (demo)"
+                label={t("footer.providerChip", "CurrencyAPI (demo)")}
                 sx={{
                   fontSize: 11,
                   height: 22,
@@ -187,7 +195,7 @@ export default function Footer() {
               />
               <Chip
                 size="small"
-                label="Delayed quotes"
+                label={t("footer.delayedChip", "Delayed quotes")}
                 sx={{
                   fontSize: 11,
                   height: 22,
@@ -235,7 +243,10 @@ export default function Footer() {
           spacing={1}
         >
           <Typography sx={{ fontSize: 12, opacity: 0.75 }}>
-            © {new Date().getFullYear()} Rate Flow. All rights reserved.
+            {t("footer.copyright", {
+              defaultValue: "© {{year}} Rate Flow. All rights reserved.",
+              year: new Date().getFullYear(),
+            })}
           </Typography>
 
           <Stack direction="row" spacing={2}>
@@ -249,7 +260,7 @@ export default function Footer() {
                 "&:hover": { color: "#3ac6ff" },
               }}
             >
-              Privacy Policy
+              {t("footer.privacy", "Privacy Policy")}
             </Link>
             <Link
               href="#"
@@ -261,7 +272,7 @@ export default function Footer() {
                 "&:hover": { color: "#3ac6ff" },
               }}
             >
-              Terms of Use
+              {t("footer.terms", "Terms of Use")}
             </Link>
             <Link
               href="#"
@@ -273,7 +284,7 @@ export default function Footer() {
                 "&:hover": { color: "#3ac6ff" },
               }}
             >
-              Support
+              {t("footer.support", "Support")}
             </Link>
           </Stack>
         </Stack>

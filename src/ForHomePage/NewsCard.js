@@ -6,9 +6,11 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
+import { useTranslation } from "react-i18next";
 
 export default function NewsCard() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const [news, setNews] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
@@ -92,7 +94,9 @@ export default function NewsCard() {
         </Typography>
 
         <Box sx={{ mt: "auto", display: "flex", justifyContent: "flex-end" }}>
-          <Button sx={{ color: "#39c6ff" }}>See more →</Button>
+          <Button sx={{ color: "#39c6ff" }}>
+            {t("common.seeMore", "See more")} →
+          </Button>
         </Box>
       </CardContent>
     </Card>

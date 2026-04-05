@@ -11,6 +11,7 @@ import {
   Stack,
   Button,
 } from "@mui/material";
+import { useTranslation } from "react-i18next";
 //تجهيز مشان ال API
 const NEWS_ITEMS = [
   {
@@ -84,6 +85,9 @@ const NEWS_ITEMS = [
 const CATEGORIES = ["All", "Forex", "Crypto", "Macro"];
 
 function NewsCard({ item }) {
+  const { t, i18n } = useTranslation();
+  const isAr = i18n.language === "ar";
+
   return (
     <Card
       sx={{
@@ -105,6 +109,7 @@ function NewsCard({ item }) {
           borderColor: "rgba(58,198,255,0.6)",
         },
         color: "white",
+        direction: isAr ? "rtl" : "ltr",
       }}
     >
       <CardMedia
@@ -124,11 +129,12 @@ function NewsCard({ item }) {
           display: "flex",
           flexDirection: "column",
           flexGrow: 1,
+          textAlign: isAr ? "right" : "left",
         }}
       >
         <Stack direction="row" spacing={1} alignItems="center" mb={1}>
           <Chip
-            label={item.category}
+            label={t(`news.categories.${item.category}`, item.category)}
             size="small"
             sx={{
               fontSize: 11,
@@ -188,7 +194,7 @@ function NewsCard({ item }) {
               },
             }}
           >
-            Read full story →
+            {t("news.readFullStory", "Read full story")} →
           </Button>
         </Box>
       </CardContent>
@@ -197,6 +203,8 @@ function NewsCard({ item }) {
 }
 
 export default function NewsPage() {
+  const { t, i18n } = useTranslation();
+  const isAr = i18n.language === "ar";
   const [activeCategory, setActiveCategory] = React.useState("All");
 
   const filteredNews =
@@ -212,6 +220,7 @@ export default function NewsPage() {
         paddingTop: "120px",
         pb: 6,
         color: "white",
+        direction: isAr ? "rtl" : "ltr",
       }}
     >
       <Box
@@ -231,23 +240,25 @@ export default function NewsPage() {
           }}
         >
           <Typography sx={{ fontSize: 30, fontWeight: 700, mb: 1 }}>
-            News & Market Insights
+            {t("news.title", "News & Market Insights")}
           </Typography>
           <Typography sx={{ fontSize: 14, opacity: 0.78 }}>
-            Curated updates across forex, crypto, and macroeconomics to help you
-            move money smarter.
+            {t(
+              "news.subtitle",
+              "Curated updates across forex, crypto, and macroeconomics to help you move money smarter.",
+            )}
           </Typography>
         </Box>
 
         <Stack
           direction="row"
           spacing={1}
-          sx={{ mb: 3, flexWrap: "wrap", rowGap: 1, marginLeft: "400px" }}
+          sx={{ mb: 3, flexWrap: "wrap", rowGap: 1, justifyContent: "center" }}
         >
           {CATEGORIES.map((cat) => (
             <Chip
               key={cat}
-              label={cat}
+              label={t(`news.categories.${cat}`, cat)}
               onClick={() => setActiveCategory(cat)}
               sx={{
                 cursor: "pointer",
@@ -272,7 +283,7 @@ export default function NewsPage() {
 
         <Grid container spacing={3} justifyContent="center">
           {filteredNews.map((item) => (
-            <Grid item key={item.id} xs={12} sm={6} md={6}>
+            <Grid key={item.id} size={{ xs: 12, sm: 6, md: 6 }}>
               <NewsCard item={item} />
             </Grid>
           ))}
@@ -299,7 +310,7 @@ export default function NewsPage() {
               },
             }}
           >
-            Load more news
+            {t("news.loadMore", "Load more news")}
           </Button>
         </Box>
       </Box>

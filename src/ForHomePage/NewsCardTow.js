@@ -7,9 +7,11 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
+import { useTranslation } from "react-i18next";
 
 export default function NewsCardTow() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const [news, setNews] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
@@ -145,7 +147,7 @@ export default function NewsCardTow() {
               "&:hover": { color: "#66d1ff" },
             }}
           >
-            See more →
+            {t("common.seeMore", "See more")} →
           </Button>
         </Box>
       </CardContent>

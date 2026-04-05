@@ -13,6 +13,7 @@ import {
   MenuItem,
   Divider,
 } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 import { ArrowUpward, ArrowDownward, TrendingUp } from "@mui/icons-material";
 
@@ -116,6 +117,9 @@ const FX_API_URL = "https://api.currencyapi.com/v3/latest?base_currency=USD";
 const FX_API_KEY = "cur_live_ho3QuAempT4lyyiQNx3VckPMznMU1SghwPj7vETr"; // يفضّل env
 
 export default function GoldPage() {
+  const { t, i18n } = useTranslation();
+  const isAr = i18n.language === "ar";
+
   const [timeframe, setTimeframe] = useState("1M");
   const [metal, setMetal] = useState("gold"); // gold or silver
   const [baseCurrency, setBaseCurrency] = useState("USD");
@@ -144,14 +148,14 @@ export default function GoldPage() {
         setFxRates(data.data);
       } catch (err) {
         console.error(err);
-        setFxError("Error loading FX rates. Showing USD only.");
+        setFxError(t("gold.fxError", "Error loading FX rates. Showing USD only."));
       } finally {
         setFxLoading(false);
       }
     };
 
     fetchFxRates();
-  }, []);
+  }, [t]);
 
   // دالة مساعدة لتحويل الذهب/الفضة لأي عملة
   const getFxRate = (code) => {
@@ -168,7 +172,8 @@ export default function GoldPage() {
   const currentColor = metal === "gold" ? "#ffeb3b" : "#b3e5fc";
   const gradientId = metal === "gold" ? "goldArea" : "silverArea";
   const instrumentCode = metal === "gold" ? "XAU" : "XAG";
-  const metalName = metal === "gold" ? "Gold" : "Silver";
+  const metalName =
+    metal === "gold" ? t("gold.metals.gold", "Gold") : t("gold.metals.silver", "Silver");
 
   const priceInSelectedCurrency = (() => {
     const rate = getFxRate(baseCurrency);
@@ -179,7 +184,6 @@ export default function GoldPage() {
   const renderChangeChip = (pct, label) => {
     const isUp = pct > 0;
     const Icon = isUp ? ArrowUpward : ArrowDownward;
-    const color = isUp ? "#4caf50" : "#f44336";
     const bg = isUp ? "rgba(76,175,80,0.1)" : "rgba(244,67,54,0.12)";
 
     return (
@@ -219,6 +223,7 @@ export default function GoldPage() {
         paddingX: { xs: 2.5, md: 8 },
         pb: 6,
         color: "white",
+        direction: isAr ? "rtl" : "ltr",
       }}
     >
       {/* العنوان الرئيسي */}
@@ -232,13 +237,14 @@ export default function GoldPage() {
               color: "white",
             }}
           >
-            Gold & Silver Spot Dashboard
+            {t("gold.title", "Gold & Silver Spot Dashboard")}
           </Typography>
         </Stack>
         <Typography sx={{ fontSize: 14, opacity: 0.78 }}>
-          Live reference prices for gold (XAU) and silver (XAG), compared
-          against your selected currency, with daily performance and trend
-          overview.
+          {t(
+            "gold.subtitle",
+            "Live reference prices for gold (XAU) and silver (XAG), compared against your selected currency, with daily performance and trend overview.",
+          )}
         </Typography>
       </Box>
 
@@ -280,10 +286,17 @@ export default function GoldPage() {
                     mb: 0.5,
                   }}
                 >
-                  {metalName} ({instrumentCode}) – Spot Price
+                  {t("gold.chartHeaderTitle", {
+                    defaultValue: "{{metal}} ({{code}}) – Spot Price",
+                    metal: metalName,
+                    code: instrumentCode,
+                  })}
                 </Typography>
                 <Typography sx={{ fontSize: 13, opacity: 0.75 }}>
-                  Ounce price trend in {baseCurrency}.
+                  {t("gold.chartHeaderSubtitle", {
+                    defaultValue: "Ounce price trend in {{currency}}.",
+                    currency: baseCurrency,
+                  })}
                 </Typography>
               </Box>
 
@@ -296,8 +309,8 @@ export default function GoldPage() {
                 {/* تبديل بين ذهب / فضة */}
                 <Stack direction="row" spacing={0.7}>
                   {[
-                    { key: "gold", label: "Gold" },
-                    { key: "silver", label: "Silver" },
+                    { key: "gold", label: t("gold.metals.gold", "Gold") },
+                    { key: "silver", label: t("gold.metals.silver", "Silver") },
                   ].map((m) => (
                     <Button
                       key={m.key}
@@ -418,7 +431,10 @@ export default function GoldPage() {
                     opacity: 0.8,
                   }}
                 >
-                  Current {metalName.toLowerCase()} price (per ounce)
+                  {t("gold.currentPriceLabel", {
+                    defaultValue: "Current {{metal}} price (per ounce)",
+                    metal: metalName,
+                  })}
                 </Typography>
                 <Typography
                   sx={{
@@ -445,7 +461,7 @@ export default function GoldPage() {
                     opacity: 0.7,
                   }}
                 >
-                  Reference only – may differ from execution price.
+                  {t("gold.referenceOnly", "Reference only – may differ from execution price.")}
                 </Typography>
               </Stack>
             </Stack>
@@ -522,7 +538,7 @@ export default function GoldPage() {
                   opacity: 0.7,
                 }}
               >
-                Loading FX rates…
+                {t("gold.fxLoading", "Loading FX rates…")}
               </Typography>
             )}
             {fxError && (
@@ -573,7 +589,7 @@ export default function GoldPage() {
                       opacity: 0.9,
                     }}
                   >
-                    Gold • XAU
+                    {t("gold.metals.gold", "Gold")} • XAU
                   </Typography>
                   <Typography
                     sx={{
@@ -598,8 +614,10 @@ export default function GoldPage() {
                   mb: 1,
                 }}
               >
-                Benchmark ounce price in USD. Use the selector in the main chart
-                to view gold in your preferred base currency.
+                {t(
+                  "gold.cards.gold.description",
+                  "Benchmark ounce price in USD. Use the selector in the main chart to view gold in your preferred base currency.",
+                )}
               </Typography>
 
               <Divider
@@ -611,14 +629,16 @@ export default function GoldPage() {
 
               <Stack spacing={0.7} sx={{ fontSize: 12 }}>
                 <Typography sx={{ opacity: 0.8 }}>
-                  • Instrument: XAU/USD (spot)
+                  {t("gold.cards.gold.bullets.instrument", "• Instrument: XAU/USD (spot)")}
                 </Typography>
                 <Typography sx={{ opacity: 0.8 }}>
-                  • Unit: 1 fine troy ounce
+                  {t("gold.cards.gold.bullets.unit", "• Unit: 1 fine troy ounce")}
                 </Typography>
                 <Typography sx={{ opacity: 0.8 }}>
-                  • Role: hedge asset, inflation protection, long-term store of
-                  value.
+                  {t(
+                    "gold.cards.gold.bullets.role",
+                    "• Role: hedge asset, inflation protection, long-term store of value.",
+                  )}
                 </Typography>
               </Stack>
             </CardContent>
@@ -650,7 +670,7 @@ export default function GoldPage() {
                       opacity: 0.9,
                     }}
                   >
-                    Silver • XAG
+                    {t("gold.metals.silver", "Silver")} • XAG
                   </Typography>
                   <Typography
                     sx={{
@@ -675,8 +695,10 @@ export default function GoldPage() {
                   mb: 1,
                 }}
               >
-                Silver spot price in USD per ounce. Often trades with higher
-                volatility than gold and is heavily driven by industrial demand.
+                {t(
+                  "gold.cards.silver.description",
+                  "Silver spot price in USD per ounce. Often trades with higher volatility than gold and is heavily driven by industrial demand.",
+                )}
               </Typography>
 
               <Divider
@@ -688,13 +710,19 @@ export default function GoldPage() {
 
               <Stack spacing={0.7} sx={{ fontSize: 12 }}>
                 <Typography sx={{ opacity: 0.8 }}>
-                  • Instrument: XAG/USD (spot)
+                  {t("gold.cards.silver.bullets.instrument", "• Instrument: XAG/USD (spot)")}
                 </Typography>
                 <Typography sx={{ opacity: 0.8 }}>
-                  • Used in industry, solar, electronics, jewelry.
+                  {t(
+                    "gold.cards.silver.bullets.uses",
+                    "• Used in industry, solar, electronics, jewelry.",
+                  )}
                 </Typography>
                 <Typography sx={{ opacity: 0.8 }}>
-                  • Typically more volatile and tactical than gold.
+                  {t(
+                    "gold.cards.silver.bullets.volatility",
+                    "• Typically more volatile and tactical than gold.",
+                  )}
                 </Typography>
               </Stack>
             </CardContent>
@@ -709,8 +737,10 @@ export default function GoldPage() {
           opacity: 0.65,
         }}
       >
-        Prices shown are indicative and for informational purposes only. They do
-        not represent a firm bid/ask from Rate Flow or any liquidity provider.
+        {t(
+          "gold.disclaimer",
+          "Prices shown are indicative and for informational purposes only. They do not represent a firm bid/ask from Rate Flow or any liquidity provider.",
+        )}
       </Typography>
     </Box>
   );

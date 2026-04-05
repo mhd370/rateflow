@@ -13,6 +13,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import Flags from "./ForHomePage/Flags";
+import { useTranslation } from "react-i18next";
 
 import {
   ResponsiveContainer,
@@ -74,9 +75,11 @@ const timeframeOptions = [
   { id: "1Y", label: "1Y", desc: "Last 12 months" },
 ];
 
-export default function MarketTrends() {
+export default function MarketTrendsChart() {
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
+  const { t, i18n } = useTranslation();
+  const isAr = i18n.language === "ar";
 
   const [selectedCurrency, setSelectedCurrency] = React.useState("EUR");
 
@@ -108,6 +111,7 @@ export default function MarketTrends() {
         border: "1px solid rgba(255,255,255,0.06)",
         boxShadow: "0 14px 36px rgba(0,0,0,0.55)",
         overflow: "hidden",
+        direction: isAr ? "rtl" : "ltr",
       }}
     >
       <CardHeader
@@ -125,10 +129,10 @@ export default function MarketTrends() {
               variant="subtitle1"
               sx={{ color: "#ffffff", fontWeight: 600 }}
             >
-              Market Trends
+              {t("marketTrends.chartTitle", "Market Trends")}
             </Typography>
             <Chip
-              label="FX • Metals • Index"
+              label={t("marketTrends.chip", "FX • Metals • Index")}
               size="small"
               sx={{
                 height: 22,
@@ -150,7 +154,8 @@ export default function MarketTrends() {
               mt: 0.5,
             }}
           >
-            {currentTimeframeObj.desc} • Indexed vs USD (100 = start)
+            {t(`marketTrends.timeframes.${currentTimeframeObj.id}`, currentTimeframeObj.desc)} •{" "}
+            {t("marketTrends.indexedNote", "Indexed vs USD (100 = start)")}
           </Typography>
         }
         sx={{
@@ -176,7 +181,7 @@ export default function MarketTrends() {
                 mb: 0.5,
               }}
             >
-              Focus currency
+              {t("marketTrends.focusCurrency", "Focus currency")}
             </Typography>
             <Select
               size="small"
@@ -221,7 +226,7 @@ export default function MarketTrends() {
                 mb: 0.5,
               }}
             >
-              Timeframe
+              {t("marketTrends.timeframe", "Timeframe")}
             </Typography>
             <Stack direction="row" spacing={1}>
               {timeframeOptions.map((tf) => {

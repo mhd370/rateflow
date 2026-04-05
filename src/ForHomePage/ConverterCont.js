@@ -91,6 +91,7 @@ export default function ConverterCont() {
   const renderSelected = (selectedCode, placeholder) => {
     if (!selectedCode) return <em>{t(placeholder)}</em>;
     const curr = currencies.find((c) => c.code === selectedCode);
+    if (!curr) return selectedCode;
     return (
       <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
         <Flags countryCode={curr.flag} size={20} />
