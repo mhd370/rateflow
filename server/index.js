@@ -77,9 +77,9 @@ app.use((err, req, res, next) => {
 async function start() {
   try {
     await initDb();
-    const port = Number(process.env.PORT) || 4000;
-    app.listen(port, () => {
-      console.log(`[server] listening on http://localhost:${port}`);
+    const PORT = process.env.PORT || 4000;
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
     });
   } catch (err) {
     console.error("[server] Failed to start:", err);
