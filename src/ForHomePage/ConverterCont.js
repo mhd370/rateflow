@@ -10,7 +10,7 @@ import Button from "@mui/material/Button";
 import Flags from "./Flags";
 
 const API_URL = "https://api.currencyapi.com/v3/latest?base_currency=USD";
-const API_KEY = "cur_live_ho3QuAempT4lyyiQNx3VckPMznMU1SghwPj7vETr";
+const API_KEY = String(process.env.REACT_APP_CURRENCY_API_KEY || "").trim();
 
 export default function ConverterCont() {
   const { t, i18n } = useTranslation();

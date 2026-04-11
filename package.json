@@ -2,7 +2,7 @@
   "name": "conventer",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:4000",
+  "proxy": "https://rateflowbackend2-sc62njq2.b4a.run",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",

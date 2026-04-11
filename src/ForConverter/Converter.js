@@ -238,8 +238,7 @@ export default function Converter() {
 
   const currencyApiKey = React.useMemo(() => {
     const fromEnv = String(process.env.REACT_APP_CURRENCY_API_KEY || "").trim();
-    // Fallback key is already used elsewhere in the project (prefer env in real deployments).
-    return fromEnv || "cur_live_ho3QuAempT4lyyiQNx3VckPMznMU1SghwPj7vETr";
+    return fromEnv;
   }, []);
 
   const needsFx =

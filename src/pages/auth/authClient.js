@@ -1,6 +1,6 @@
 import i18n from "../../i18n";
 
-const DEFAULT_DEV_API_BASE = "http://localhost:4000";
+const DEFAULT_DEV_API_BASE = "https://rateflowbackend2-sc62njq2.b4a.run";
 
 function normalizeBaseUrl(value) {
   const v = String(value || "").trim();

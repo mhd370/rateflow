@@ -12,7 +12,7 @@ import {
   HorizontalRule as HorizontalRuleIcon,
 } from "@mui/icons-material";
 
-const API_KEY = "cur_live_ho3QuAempT4lyyiQNx3VckPMznMU1SghwPj7vETr";
+const API_KEY = String(process.env.REACT_APP_CURRENCY_API_KEY || "").trim();
 
 const QUOTES = ["EUR", "TRY", "SYP", "GBP"];
 

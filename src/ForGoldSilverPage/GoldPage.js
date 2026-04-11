@@ -114,7 +114,7 @@ const CURRENCIES = [
 
 // مشان ال API
 const FX_API_URL = "https://api.currencyapi.com/v3/latest?base_currency=USD";
-const FX_API_KEY = "cur_live_ho3QuAempT4lyyiQNx3VckPMznMU1SghwPj7vETr"; // يفضّل env
+const FX_API_KEY = String(process.env.REACT_APP_CURRENCY_API_KEY || "").trim();
 
 export default function GoldPage() {
   const { t, i18n } = useTranslation();

@@ -89,6 +89,8 @@ function parseJsonSafely(text) {
 }
 
 function requireGeminiConfig() {
+  if (!requireGeminiConfig._didLog) requireGeminiConfig._didLog = false;
+
   const apiKey = String(process.env.GEMINI_API_KEY || "").trim();
   if (!apiKey) {
     const err = new Error("AI is not configured (missing GEMINI_API_KEY).");
@@ -97,7 +99,16 @@ function requireGeminiConfig() {
   }
 
   const baseUrl = String(process.env.GEMINI_BASE_URL || "https://generativelanguage.googleapis.com").trim();
-  const model = String(process.env.GEMINI_MODEL || "").trim() || "gemini-2.0-flash";
+  const model = String(process.env.GEMINI_MODEL || "").trim() || "gemini-2.5-flash";
+
+  if (!requireGeminiConfig._didLog) {
+    requireGeminiConfig._didLog = true;
+    console.log("[market-chat] Gemini config", {
+      model,
+      baseUrl: baseUrl || "(default)",
+      nodeEnv: process.env.NODE_ENV || "",
+    });
+  }
 
   return { apiKey, baseUrl, model };
 }

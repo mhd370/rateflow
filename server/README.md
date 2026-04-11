@@ -30,5 +30,5 @@ Endpoint:
 
 Env vars:
 - `GEMINI_API_KEY` (required)
-- `GEMINI_MODEL` (optional, default: `gemini-2.0-flash`)
+- `GEMINI_MODEL` (optional, default: `gemini-2.5-flash`)
 - `GEMINI_BASE_URL` (optional, default: `https://generativelanguage.googleapis.com`)

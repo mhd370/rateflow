@@ -1,7 +1,6 @@
 import { fetchCoinGeckoCandles } from "./coingecko";
 
 const CURRENCY_API_BASE_URL = "https://api.currencyapi.com/v3/latest";
-const DEFAULT_CURRENCY_API_KEY = "cur_live_ho3QuAempT4lyyiQNx3VckPMznMU1SghwPj7vETr";
 
 function createTimeoutSignal(externalSignal, timeoutMs) {
   const controller = new AbortController();
@@ -44,7 +43,7 @@ async function fetchJson(url, { signal, timeoutMs = 12000, headers } = {}) {
 
 function normalizeCurrencyApiKey() {
   const fromEnv = String(process.env.REACT_APP_CURRENCY_API_KEY || "").trim();
-  return fromEnv || DEFAULT_CURRENCY_API_KEY;
+  return fromEnv;
 }
 
 async function fetchCurrencyApiRates({ baseCurrency = "USD", currencies, signal, timeoutMs } = {}) {
