@@ -78,8 +78,9 @@ async function start() {
   try {
     await initDb();
     const PORT = process.env.PORT || 4000;
-    app.listen(PORT, () => {
-      console.log(`Server running on port ${PORT}`);
+    const HOST = "0.0.0.0";
+    app.listen(PORT, HOST, () => {
+      console.log(`Server running on http://${HOST}:${PORT}`);
     });
   } catch (err) {
     console.error("[server] Failed to start:", err);
